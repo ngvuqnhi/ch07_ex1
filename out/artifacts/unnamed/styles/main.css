@@ -1,0 +1,117 @@
+:root {
+    --bg:#f7f8fa;
+    --panel:#ffffff;
+    --text:#222;
+    --muted:#6b7280;
+    --primary:#2563eb;
+    --primary-hover:#1e40af;
+    --border:#e5e7eb;
+    --danger:#ef4444;
+    --success:#16a34a;
+    --radius:14px;
+    --shadow:0 6px 18px rgba(0,0,0,.06);
+}
+
+* { box-sizing:border-box; }
+html,body { height:100%; }
+body {
+    margin:0;
+    font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    color:var(--text);
+    background:radial-gradient(1200px 800px at 10% -10%, #eef2ff 0%, transparent 35%), var(--bg);
+}
+
+/* Layout */
+.container { max-width:980px; margin:40px auto; padding:0 20px; }
+.card {
+    background:var(--panel); border:1px solid var(--border);
+    border-radius:var(--radius); box-shadow:var(--shadow);
+    padding:22px;
+}
+.header {
+    display:flex; align-items:center; justify-content:space-between; gap:16px;
+    margin-bottom:18px; padding-bottom:12px; border-bottom:1px dashed var(--border);
+}
+.header h1 { font-size:22px; margin:0; }
+.header .sub { color:var(--muted); font-size:14px; }
+
+h2 { font-size:20px; margin:0 0 14px; }
+p { margin:10px 0; }
+
+/* Forms */
+.input-row { display:grid; gap:12px; }
+@media (min-width:640px) { .input-row { grid-template-columns:1fr 1fr 1fr; } }
+label { font-weight:600; font-size:14px; display:block; margin-bottom:4px; }
+input[type="text"], input[type="email"] {
+    width:100%; padding:10px 12px;
+    border:1px solid var(--border); border-radius:10px;
+    background:#fff; outline:none;
+}
+input:focus { border-color:var(--primary); box-shadow:0 0 0 3px rgba(37,99,235,.12); }
+
+/* Buttons */
+.actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:12px; }
+.btn {
+    appearance:none; border:1px solid var(--primary); background:var(--primary);
+    color:#fff; padding:10px 14px; border-radius:10px;
+    cursor:pointer; font-weight:600;
+}
+.btn:hover { background:var(--primary-hover); border-color:var(--primary-hover); }
+.btn-secondary {
+    background:#fff; color:var(--primary); border:1px solid var(--primary);
+}
+.btn-secondary:hover { background:#f0f6ff; }
+.btn-danger {
+    background:var(--danger); border-color:var(--danger);
+}
+.btn-danger:hover { background:#b91c1c; border-color:#b91c1c; }
+
+/* Notices */
+.notice {
+    padding:10px 12px; border-radius:10px; border:1px solid var(--border);
+    background:#fafafa; color:var(--muted);
+}
+.notice.success { border-color:#bbf7d0; background:#f0fdf4; color:#166534; }
+.notice.error { border-color:#fecaca; background:#fef2f2; color:#991b1b; }
+
+/* Tables */
+.table {
+    width:100%; border-collapse:separate; border-spacing:0;
+    border-radius:12px; border:1px solid var(--border); overflow:hidden;
+}
+.table th, .table td { padding:12px 14px; text-align:left; }
+.table thead th { background:#f3f4f6; font-size:14px; }
+.table tbody tr + tr td { border-top:1px solid var(--border); }
+.table a { color:var(--primary); text-decoration:none; }
+.table a:hover { text-decoration:underline; }
+
+/* Footer */
+.footer { margin:26px 0 10px; color:var(--muted); font-size:13px; text-align:center; }
+
+/* Utilities */
+.form-help { font-size:13px; color:var(--muted); }
+hr.split { border:none; border-top:1px solid var(--border); margin:16px 0; }
+
+/* ---- Link buttons in table ---- */
+.table a.btn-link {
+    display:inline-block;
+    padding:6px 12px;
+    border:1px solid var(--primary);
+    border-radius:8px;
+    background:#fff;
+    color:var(--primary);
+    font-weight:600;
+    text-decoration:none;
+}
+.table a.btn-link:hover {
+    background:#f0f6ff;
+    border-color:var(--primary-hover);
+    color:var(--primary-hover);
+    text-decoration:none;
+}
+
+/* ---- Round table corners ---- */
+.table {
+    border-radius:14px;
+    overflow:hidden;   /* quan trọng để bo tròn header + body */
+}
